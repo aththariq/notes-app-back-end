@@ -7,6 +7,18 @@ const {
 } = require("./handler");
 
 const routes = [
+  // Tambahkan route root/default
+  {
+    method: 'GET',
+    path: '/',
+    handler: (request, h) => {
+      return {
+        status: 'success',
+        message: 'Welcome to Notes API',
+        info: 'Use /notes endpoint to interact with notes'
+      };
+    }
+  },
   {
     method: "POST",
     path: "/notes",
